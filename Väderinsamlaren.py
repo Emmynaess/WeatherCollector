@@ -97,15 +97,14 @@ def create_excel_file_if_not_exists():
         wb.close()
 
 def run():
-   
     while True:
         print("MENY")
         print("1. Hämta senaste data")
         print("2. Skriv ut prognos")
         print("9. Avsluta")
-   
-        val = input("Välj ett alternativ: ")
-   
+
+        val = input("Välj ett alternativ:")
+
         if val == '1':
             created = datetime.now()
             data_from_smhi = get_data_from_smhi()
@@ -127,13 +126,12 @@ def run():
                 print('\nPrognosdata har skrivits till Excel-filen.\n')
             except FileNotFoundError:
                 print('\nFilen Väderdata.xlsx hittades inte eller kunde inte öppnas.\n')
-               
 
         elif val == '2':
             time.sleep(1)
             nu = datetime.now()
             file_path = 'Väderdata.xlsx'
-           
+
             try:
                 wb = load_workbook(file_path)
                 sheet = wb.active
@@ -167,14 +165,19 @@ def run():
                     for i in range(24):
                         rain_snow_nederbörd = 'Nederbörd' if rain_or_snow[i] == 'True' else 'Ingen nederbörd'
                         print("{:<15} {:<15} {:<15}".format(temperatures[i], hours[i], rain_snow_nederbörd))
+                elif len(temperatures) < 24 or len(hours) < 24 or len(rain_or_snow) < 24:
+                    senaste_prognos = nu - timedelta(days=1)
+                    print(f'\nPrognos från SMHI {senaste_prognos.strftime("%Y-%m-%d")}')
+                    wb.close()
                 else:
                     print('Det finns inte tillräckligt med data i Excel-filen (färre än 24 rader).')
-                wb.close()
+                    wb.close()
+                
             except FileNotFoundError:
                 print(f'\nFilen {file_path} hittades inte.\n')
-               
+
         elif val == '9':
-            print('Avslutar programmet.')
+            print('Avslutar programmet')
             break
         else:
             print('Ogiltligt val. Välj igen')
