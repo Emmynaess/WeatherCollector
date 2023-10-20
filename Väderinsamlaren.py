@@ -53,8 +53,8 @@ time_smhi = get_timestamp(get_data_from_smhi())
 
 # TEMPERATURES
 def get_temperatures(smhi):
-    smhi_data = smhi.json()
-    viktig_data = smhi_data['timeSeries']
+    smhi = smhi.json()
+    viktig_data = smhi['timeSeries']
     temp_data = []
 
     for temp in viktig_data[:24]:
