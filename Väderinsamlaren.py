@@ -1,6 +1,5 @@
 import requests
 import os
-import datetime
 from datetime import datetime, timedelta, date
 import json
 import openpyxl
