@@ -35,6 +35,7 @@ Install the necessary Python packages by running:
 
 ### Required Packages:
 requests: For making HTTP calls to SMHI’s API.
+
 openpyxl: For creating and managing Excel files.
 
 ### Usage
