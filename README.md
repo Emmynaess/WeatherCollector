@@ -12,7 +12,7 @@ Follow these steps to install and run the project.
 1. Clone or Download the Project
 bash
 
-```git clone https://github.com/Emmynaess/V-derinsamlaren.git```
+```git clone https://github.com/Emmynaess/WeatherCollector.git```
 
 cd weather-collector
 
