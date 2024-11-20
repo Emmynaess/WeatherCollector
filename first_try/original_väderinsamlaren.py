@@ -1,3 +1,5 @@
+
+
 import requests
 import os
 from datetime import datetime, timedelta, date
@@ -7,11 +9,9 @@ from openpyxl import Workbook, load_workbook
 import time
 
 
-# Koordinater
 lat = 59.30
 lon = 18.02
 
-# API
 URL = f'https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{lon}/lat/{lat}/data.json'
 
 def get_data_from_smhi():
