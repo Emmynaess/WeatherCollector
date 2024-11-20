@@ -26,7 +26,7 @@ Activate by:
 
 or
 
-```env\Scripts\activate```
+```venv\Scripts\activate```
 
 5. Install Required Packages
 Install the necessary Python packages by running:
